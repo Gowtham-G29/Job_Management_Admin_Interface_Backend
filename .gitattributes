@@ -1,0 +1,9 @@
+/mvnw text eol=lf
+*.cmd text eol=crlf
+
+# Set all text files to be normalized with LF line endings
+* text=auto
+
+# Force .gitignore to always use LF
+.gitignore text eol=lf
+
