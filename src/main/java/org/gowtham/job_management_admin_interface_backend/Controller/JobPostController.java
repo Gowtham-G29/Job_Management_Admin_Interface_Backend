@@ -1,6 +1,7 @@
 package org.gowtham.job_management_admin_interface_backend.Controller;
 
 import org.gowtham.job_management_admin_interface_backend.DTO.ErrorResponseDTO;
+import org.gowtham.job_management_admin_interface_backend.DTO.JobFilterRequestDTO;
 import org.gowtham.job_management_admin_interface_backend.DTO.JobPostRequestDTO;
 import org.gowtham.job_management_admin_interface_backend.Model.JobPost;
 import org.gowtham.job_management_admin_interface_backend.Service.JobPostServiceImpl;
@@ -59,6 +60,18 @@ public class JobPostController {
             return ResponseEntity.status(HttpStatus.OK).body(jobPosts);
         }
 
+    }
+    @PostMapping("/api/jobs/admin/getPostsByFilters")
+    public ResponseEntity<?> filterJobs(@RequestBody JobFilterRequestDTO filterRequest) {
+        List<JobPost> jobs = jobPostService.findByAnyFilters(filterRequest);
+
+        if(jobs.isEmpty()) {
+            ErrorResponseDTO error = new ErrorResponseDTO();
+            error.setMessage("No Job Posts Found");
+            error.setStatusCode(HttpStatus.NO_CONTENT);
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(error);
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(jobs);
     }
 
 }

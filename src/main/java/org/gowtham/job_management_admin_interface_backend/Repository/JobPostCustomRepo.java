@@ -1,19 +1,11 @@
-package org.gowtham.job_management_admin_interface_backend.Service;
-
+package org.gowtham.job_management_admin_interface_backend.Repository;
 
 import org.gowtham.job_management_admin_interface_backend.DTO.JobFilterRequestDTO;
 import org.gowtham.job_management_admin_interface_backend.Model.JobPost;
 
 import java.util.List;
 
-public interface JobPostService {
-
-    JobPost createJobPost(JobPost newJobPost);
-
-    List<JobPost> getAllJobPosts();
-
-
-
-
+public interface JobPostCustomRepo {
     List<JobPost> findByAnyFilters(JobFilterRequestDTO filterRequest);
 }
+
