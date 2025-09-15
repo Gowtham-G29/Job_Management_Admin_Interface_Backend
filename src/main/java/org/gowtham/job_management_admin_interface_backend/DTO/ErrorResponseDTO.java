@@ -10,6 +10,6 @@ import org.springframework.http.HttpStatus;
 @NoArgsConstructor
 public class ErrorResponseDTO {
 
-    String message;
-    HttpStatus statusCode;
+   private  String message;
+   private HttpStatus statusCode;
 }

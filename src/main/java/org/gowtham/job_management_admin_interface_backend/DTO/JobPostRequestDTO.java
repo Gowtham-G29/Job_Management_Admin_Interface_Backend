@@ -6,19 +6,22 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
+
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class JobPostRequestDTO {
 
-    String JobTitle;
-    String CompanyName;
-    String Location;
+    private String jobTitle;
+    private String companyName;
+    private String location;
 
-    int MinSalary;
-    int MaxSalary;
+    private int minSalary;
+    private int maxSalary;
 
-    LocalDate ApplicationDeadLine;
+    private LocalDate applicationDeadLine;
 
-    String JobDescription;
+    private String jobDescription;
 }
+

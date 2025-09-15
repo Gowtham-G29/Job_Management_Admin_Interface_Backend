@@ -17,7 +17,7 @@ public class JobPostController {
     @Autowired
     private JobPostServiceImpl jobPostService;
 
-    @PostMapping("/api/jobs/create")
+    @PostMapping("/api/jobs/admin/create")
     public ResponseEntity<?> createJobPost(@RequestBody JobPostRequestDTO jobPostRequestDTO) {
 
         // Map DTO → Entity

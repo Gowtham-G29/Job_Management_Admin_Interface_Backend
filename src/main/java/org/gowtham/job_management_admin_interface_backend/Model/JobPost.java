@@ -19,21 +19,21 @@ public class JobPost {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long postId;
+    private Long postId;
 
-    String JobTitle;
-    String CompanyName;
-    String Location;
+   private String JobTitle;
+   private String CompanyName;
+   private String Location;
 
-    int MinSalary;
-    int MaxSalary;
+   private int minSalary;
+   private int maxSalary;
 
-    LocalDate ApplicationDeadLine;
+   private LocalDate applicationDeadLine;
 
-    String JobDescription;
+   private String JobDescription;
 
     @CreationTimestamp
-    LocalDate CreatedDate;
+   private LocalDate CreatedDate;
 
 
 }
