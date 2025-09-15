@@ -16,6 +16,7 @@ public class JobPostRequestDTO {
     private String jobTitle;
     private String companyName;
     private String location;
+    private String jobType;
 
     private int minSalary;
     private int maxSalary;

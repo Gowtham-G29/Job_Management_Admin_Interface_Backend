@@ -7,9 +7,12 @@ import org.gowtham.job_management_admin_interface_backend.Service.JobPostService
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class JobPostController {
@@ -26,6 +29,7 @@ public class JobPostController {
         newJobPost.setJobDescription(jobPostRequestDTO.getJobDescription());
         newJobPost.setCompanyName(jobPostRequestDTO.getCompanyName());
         newJobPost.setLocation(jobPostRequestDTO.getLocation());
+        newJobPost.setJobType(jobPostRequestDTO.getJobType());
         newJobPost.setApplicationDeadLine(jobPostRequestDTO.getApplicationDeadLine());
         newJobPost.setMaxSalary(jobPostRequestDTO.getMaxSalary());
         newJobPost.setMinSalary(jobPostRequestDTO.getMinSalary());
@@ -42,6 +46,19 @@ public class JobPostController {
 
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
         }
+    }
+
+    @GetMapping("/api/jobs/admin/getAllPosts")
+    public ResponseEntity<?> getAllJobPosts() {
+
+        List<JobPost> jobPosts = jobPostService.getAllJobPosts();
+
+        if (jobPosts.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("No Job Posts Found");
+        }else  {
+            return ResponseEntity.status(HttpStatus.OK).body(jobPosts);
+        }
+
     }
 
 }

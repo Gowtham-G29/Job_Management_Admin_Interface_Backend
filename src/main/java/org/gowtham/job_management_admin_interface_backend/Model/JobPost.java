@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -24,6 +25,7 @@ public class JobPost {
    private String JobTitle;
    private String CompanyName;
    private String Location;
+   private String jobType;
 
    private int minSalary;
    private int maxSalary;
@@ -33,7 +35,7 @@ public class JobPost {
    private String JobDescription;
 
     @CreationTimestamp
-   private LocalDate CreatedDate;
+   private LocalDateTime CreatedDate;
 
 
 }
