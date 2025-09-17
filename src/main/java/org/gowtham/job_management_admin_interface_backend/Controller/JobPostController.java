@@ -3,7 +3,6 @@ package org.gowtham.job_management_admin_interface_backend.Controller;
 import org.gowtham.job_management_admin_interface_backend.DTO.ErrorResponseDTO;
 import org.gowtham.job_management_admin_interface_backend.DTO.JobFilterRequestDTO;
 import org.gowtham.job_management_admin_interface_backend.DTO.JobPostRequestDTO;
-import org.gowtham.job_management_admin_interface_backend.Model.JobPost;
 import org.gowtham.job_management_admin_interface_backend.Service.JobPostServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,9 +1,6 @@
 package org.gowtham.job_management_admin_interface_backend.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,21 +13,29 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "job_post") // must match the table name exactly
 public class JobPost {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long postId;
 
-   private String JobTitle;
-   private String CompanyName;
-   private String Location;
+    @Column(name = "job_title")
+    private String jobTitle;
+
+   private String companyName;
+    @Column(name = "location")
+    private String location;
    private String jobType;
 
-   private int minSalary;
-   private int maxSalary;
+    @Column(name = "min_salary")
+    private Integer minSalary;
 
-   private LocalDate applicationDeadLine;
+    @Column(name = "max_salary")
+    private Integer maxSalary;
+
+
+    private LocalDate applicationDeadLine;
 
    private String JobDescription;
 

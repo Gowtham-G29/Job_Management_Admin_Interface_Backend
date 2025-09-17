@@ -17,7 +17,7 @@ public class GlobalCorsConfig {
                         .allowedOrigins(
                                 "http://localhost:5173",
                                 "http://localhost:5174",
-                                "https://trexpense.netlify.app"
+                                "https://jobmanagementadmininterface1.netlify.app"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
