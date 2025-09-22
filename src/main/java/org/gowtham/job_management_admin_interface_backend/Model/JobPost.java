@@ -8,7 +8,6 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-
 @Entity
 @Data
 @AllArgsConstructor
@@ -23,10 +22,14 @@ public class JobPost {
     @Column(name = "job_title")
     private String jobTitle;
 
-   private String companyName;
+    @Column(name = "company_name")
+    private String companyName;
+
     @Column(name = "location")
     private String location;
-   private String jobType;
+
+    @Column(name = "job_type")
+    private String jobType;
 
     @Column(name = "min_salary")
     private Integer minSalary;
@@ -34,13 +37,13 @@ public class JobPost {
     @Column(name = "max_salary")
     private Integer maxSalary;
 
+    @Column(name = "application_deadline")
+    private LocalDate applicationDeadline;
 
-    private LocalDate applicationDeadLine;
-
-   private String JobDescription;
+    @Column(name = "job_description")
+    private String jobDescription;
 
     @CreationTimestamp
-   private LocalDateTime CreatedDate;
-
-
+    @Column(name = "created_date")
+    private LocalDateTime createdDate;
 }

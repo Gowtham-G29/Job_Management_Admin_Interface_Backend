@@ -1,6 +1,5 @@
 package org.gowtham.job_management_admin_interface_backend.Service;
 
-import org.gowtham.job_management_admin_interface_backend.DTO.JobFilterRequestDTO;
 import org.gowtham.job_management_admin_interface_backend.Model.JobPost;
 import org.gowtham.job_management_admin_interface_backend.Repository.JobPostRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +24,8 @@ public class JobPostServiceImpl implements JobPostService {
     }
 
     @Override
-    public List<JobPost> findByAnyFilters(JobFilterRequestDTO filterRequest) {
-        return jobPostRepo.findByAnyFilters(filterRequest);
+    public List<JobPost> searchJobs(String location, String jobTitle, String jobType,
+                                Integer minSalary, Integer maxSalary) {
+        return jobPostRepo.searchJobs(location, jobTitle, jobType, minSalary, maxSalary);
     }
-
 }

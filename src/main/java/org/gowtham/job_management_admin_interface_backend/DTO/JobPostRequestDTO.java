@@ -18,8 +18,8 @@ public class JobPostRequestDTO {
     private String location;
     private String jobType;
 
-    private int minSalary;
-    private int maxSalary;
+    private Integer minSalary;
+    private Integer maxSalary;
 
     private LocalDate applicationDeadLine;
 
